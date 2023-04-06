@@ -1,11 +1,46 @@
-
 package ejerciciosclaserepaso;
 
 //@author Fernando Racca
-
 public class EjerciciosClaseRepaso {
 
     public static void main(String[] args) {
+        //Ejercicio1();
+        Ejercicio2();
+    }
+
+    private static void Ejercicio1() {
+        int ganados = 5;
+        int empatados = 6;
+        int puntosTotales;
+
+        puntosTotales = (ganados * 3) + empatados;
+
+        System.out.println("El equipo sumo " + puntosTotales + " puntos");
+    }
+    
+    private static void Ejercicio2(){
+        int golesEquipo1 = 2;
+        int golesEquipo2 = 3;
+        int equipoGanador = 0;
+        boolean empate = false;
+        
+        if (golesEquipo1 > golesEquipo2){
+            equipoGanador = 1;
+        } else if (golesEquipo2 > golesEquipo1){
+            equipoGanador = 2;
+        } else {
+            empate = true;
+        }
+        
+        if(empate){
+            System.out.println("Es un empate entre ambos equipos");
+        } else {
+            System.out.println("Gano el equipo " + equipoGanador);
+        }     
+    }
+    
+    private static void Ejercicio3(){
+        
         
     }
 
