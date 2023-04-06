@@ -1,7 +1,6 @@
 package ejerciciosclaserepaso;
 
 //@author Fernando Racca
-
 import java.util.Scanner;
 
 public class EjerciciosClaseRepaso {
@@ -9,7 +8,8 @@ public class EjerciciosClaseRepaso {
     public static void main(String[] args) {
         //Ejercicio1();
         //Ejercicio2();
-        Ejercicio2Scanner();
+        //Ejercicio2Scanner();
+        Ejercicio3();
     }
 
     private static void Ejercicio1() {
@@ -42,16 +42,15 @@ public class EjerciciosClaseRepaso {
             System.out.println("Gano el equipo " + equipoGanador);
         }
     }
-    
-    
+
     private static void Ejercicio2Scanner() {
-        
+
         Scanner in = new Scanner(System.in);
-                
+
         int golesEquipo1, golesEquipo2;
         int equipoGanador = 0;
         boolean empate = false;
-        
+
         System.out.print("Ingrese los goles del equipo 1: ");
         golesEquipo1 = in.nextInt();
         System.out.print("Ingrese los goles del equipo 2: ");
@@ -74,6 +73,17 @@ public class EjerciciosClaseRepaso {
 
     private static void Ejercicio3() {
 
+        char[] resultados = new char[]{'G', 'E', 'P', 'G', 'G'};
+        int puntos = 0;
+
+        for (char r : resultados) {
+            if (r == 'G') {
+                puntos += 3;
+            } else if (r == 'E') {
+                puntos += 1;
+            }
+        }
+        System.out.println("El puntaje del equipo es de " + puntos + " puntos");
     }
 
 }
