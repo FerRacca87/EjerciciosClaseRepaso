@@ -9,7 +9,8 @@ public class EjerciciosClaseRepaso {
         //Ejercicio1();
         //Ejercicio2();
         //Ejercicio2Scanner();
-        Ejercicio3();
+        //Ejercicio3();
+        Ejercicio4();
     }
 
     private static void Ejercicio1() {
@@ -84,6 +85,12 @@ public class EjerciciosClaseRepaso {
             }
         }
         System.out.println("El puntaje del equipo es de " + puntos + " puntos");
+    }
+    
+    private static void Ejercicio4(){
+        
+        
+        
     }
 
 }
