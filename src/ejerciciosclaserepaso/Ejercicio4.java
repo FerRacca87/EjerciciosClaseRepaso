@@ -25,10 +25,12 @@ public class Ejercicio4 {
         }
 
         //cargar los partidos a la lista partidos
+        boolean primeraLinea = true;
         for (String linea : Files.readAllLines(tablaPartidos)) {
-            if (linea.startsWith("equipo1")) {
-            } else {
-                //
+
+            if (!primeraLinea) {
+
+                //Dividir cada linea
                 String[] datos = linea.split(";");
                 Partido partido = new Partido();
 
@@ -51,13 +53,27 @@ public class Ejercicio4 {
                 partido.getEquipo2().sumarPuntaje(partido.calcularPuntosEquipo2());
                 partidos.add(partido);
             }
+            primeraLinea = false;
         }
+        
+        for (Equipo e : equipos){
+            e.setDiferenciaDeGol(e.getGolesAFavor() - e.getGolesEnContra());
+        }
+        
         //Ordenar
-        equipos.sort(Comparator.comparing(Equipo::getPuntaje).thenComparing(Equipo::getGolesAFavor).reversed());
+        equipos.sort(Comparator.comparing(Equipo::getPuntaje)
+                .thenComparing(Equipo::getDiferenciaDeGol).reversed());
 
         //Imprimir equipos
+        System.out.println("Equipo\t\t\tPuntos\tGF\tGC\tDG");
         for (Equipo e : equipos) {
-            System.out.println(e.getNombre() + ": " + e.getPuntaje());
+            if (e.getNombre().length() <= 6) {
+                System.out.println(e.getNombre() + ":\t\t\t" + e.getPuntaje() + "\t" + e.getGolesAFavor()
+                        + "\t" + e.getGolesEnContra() + "\t" + e.getDiferenciaDeGol());
+            } else {
+                System.out.println(e.getNombre() + ":\t\t" + e.getPuntaje() + "\t" + e.getGolesAFavor()
+                        + "\t" + e.getGolesEnContra() + "\t" + e.getDiferenciaDeGol());
+            }
         }
     }
 }

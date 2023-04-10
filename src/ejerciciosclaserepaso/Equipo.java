@@ -7,6 +7,7 @@ public class Equipo {
     private int puntaje = 0;
     private int golesAFavor = 0;
     private int golesEnContra = 0;
+    private int diferenciaDeGol = 0;
 
     public Equipo(String nombre) {
         this.nombre = nombre;
@@ -43,8 +44,14 @@ public class Equipo {
     public void setGolesEnContra(int golesEnContra) {
         this.golesEnContra = golesEnContra;
     }
-    
-    
+
+    public int getDiferenciaDeGol() {
+        return diferenciaDeGol;
+    }
+
+    public void setDiferenciaDeGol(int diferenciaDeGol) {
+        this.diferenciaDeGol = diferenciaDeGol;
+    }
 
     public void sumarPuntaje(int puntaje) {
         this.puntaje += puntaje;
